@@ -5,7 +5,9 @@ const bodyParser = require("body-parser");
 const mongo = require("mongodb");
 const MongoClient = mongo.MongoClient;
 const cors = require("cors");
-const mongoUrl = "mongodb://localhost:27017";
+const mongoUrl =
+  process.env.MONGO_URL ||
+  "mongodb+srv://sandip:sandip@delepment-cluster.6azuf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 let dbObj;
 let coll_name = "auth";
